@@ -57,30 +57,37 @@ function getWinner(playerMove,computerMove) {
 
     var winner;
     if(playerMove === computerMove){
-    return "The result is a tie!";
+        console.log("The result is a tie!");
+        return winner;
     } 
     if(playerMove === "rock"){
         if(computerMove === "scissors"){
-            return "rock wins";
+            console.log("rock wins");
+            return winner;
         }
         else{
-            return "paper wins";
+            console.log("paper wins");
+            return winner;
         }     
     }
     if(playerMove === "paper"){
         if(computerMove === "rock"){
-            return "paper wins";
+            console.log("paper wins");
+            return winner;
         }
         else{
-            return "scissors wins";
+            console.log("scissors wins");
+            return winner;
         }
     }
     if (playerMove === "scissors"){
         if(computerMove === "rock"){
-            return "rock wins";
+            console.log("rock wins");
+            return winner;
         }
         else{
-            return "scissors wins";
+            console.log("scissors wins");
+            return winner;
         } 
     }
 }
@@ -95,40 +102,59 @@ function playToFive() {
     while (games < 6){
         getPlayerMove();
         getComputerMove();
-        if(playerMove === computerMove){
-            return "The result is a tie!";
-        }
-        if(playerMove === "rock"){
-            if(computerMove === "scissors"){
-                return "rock wins";
+        getWinner();
+            if (getWinner == getInput) {
                 playerWins += 1;
-            }
-            else{
-                return "paper wins";
-                computerWins +=1;
-            }     
-        }
-        if(playerMove === "paper"){
-            if(computerMove === "rock"){
-                return "paper wins";
-                playerWins += 1;
-            }
-            else{
-                return "scissors wins";
-                computerWins +=1;
-            }
-        }
-        if (playerMove === "scissors"){
-            if(computerMove === "rock"){
-                return "rock wins";
-                computerWins +=1;
-            }
-            else{
-                return "scissors wins";
-                playerWins += 1;
-            } 
-        }
+            } else if (getWinner == getComputerMove) {
+                computerWins += 1;
+            } else{
+                return "tie!";
+            };
     }; 
     return [playerWins, computerWins];
 }
 
+//MY OWN VERSION OF ROCK, PAPER, SCISSORS  
+
+// var userChoice = prompt("Do you choose rock, paper or scissors?");
+// var computerChoice = Math.random();
+// if (computerChoice < 0.34) {
+//     computerChoice = "rock";
+// } else if(computerChoice <= 0.67) {
+//     computerChoice = "paper";
+// } else {
+//     computerChoice = "scissors";
+// }
+// var compare = function(choice1,choice2){
+//   if(choice1 === choice2){
+//     return "The result is a tie!";
+//   }
+//   if(choice1 === "rock"){
+//     if(choice2 === "scissors"){
+//         return "rock wins";
+//     }
+//     else{
+//         return "paper wins";
+//     }
+//   }
+//   if(choice1 === "paper"){
+//       if(choice2 === "rock"){
+//           return "paper wins";
+//       }
+//       else{
+//           return "scissors wins";
+//       }
+//   }
+//   if (choice1 === "scissors"){
+//       if(choice2 === "rock"){
+//           return "rock wins";
+//       }
+//       else{
+//           return "scissors wins";
+//       }
+//   }
+//   if(choice1 !== "rock", "paper", "scissors"){
+//       return "You only have 3 choices rock, paper, scissors.";
+//   };
+// };
+// compare(userChoice, computerChoice);

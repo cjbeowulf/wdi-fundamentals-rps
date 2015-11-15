@@ -59,37 +59,39 @@ function getWinner(playerMove,computerMove) {
     if(playerMove === computerMove){
         console.log("The result is a tie!");
         return winner;
-    } 
+    }
     if(playerMove === "rock"){
         if(computerMove === "scissors"){
-            console.log("rock wins");
+            console.log("Player wins");
             return winner;
         }
         else{
-            console.log("paper wins");
+            console.log("Computer wins");
             return winner;
-        }     
+        }
     }
     if(playerMove === "paper"){
         if(computerMove === "rock"){
-            console.log("paper wins");
+            console.log("Player wins");
             return winner;
         }
         else{
-            console.log("scissors wins");
+            console.log("Computer wins");
             return winner;
         }
     }
     if (playerMove === "scissors"){
         if(computerMove === "rock"){
-            console.log("rock wins");
+            console.log("Player wins");
             return winner;
         }
         else{
-            console.log("scissors wins");
+            console.log("Computer wins");
             return winner;
-        } 
+        }
     }
+
+    return winner;
 }
 
 function playToFive() {
@@ -98,23 +100,22 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
-    var games = 0;
-    while (games < 6){
+    while (playerWins != 5) || (computerWins != 5){
         getPlayerMove();
         getComputerMove();
         getWinner();
-            if (getWinner == getInput) {
+            if (getWinner == "Player wins") {
                 playerWins += 1;
-            } else if (getWinner == getComputerMove) {
+            } else if (getWinner == "Computer wins") {
                 computerWins += 1;
             } else{
                 return "tie!";
             };
-    }; 
+    };
     return [playerWins, computerWins];
 }
 
-//MY OWN VERSION OF ROCK, PAPER, SCISSORS  
+//MY OWN VERSION OF ROCK, PAPER, SCISSORS
 
 // var userChoice = prompt("Do you choose rock, paper or scissors?");
 // var computerChoice = Math.random();
